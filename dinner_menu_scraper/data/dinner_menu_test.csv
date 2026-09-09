@@ -1,0 +1,68 @@
+date,station,item_name,description,price,dietary_tags
+2026-09-08,Classics,Chile-Braised Chicken Tostada,"Chile-braised chicken, refried beans, pickled red onions, cotija cheese, and shredded lettuce on a fried blue tortilla, Spanish rice",9.25,"Made without Gluten-Containing Ingredients, Farm to Fork"
+2026-09-08,Classics,Chile-Braised Tofu Tostada,"Chile braised tofu, refried beans, pickled red onions, cotija cheese and shredded lettuce on a fried blue tortilla, Spanish rice",8.75,"Vegetarian, Made without Gluten-Containing Ingredients, Farm to Fork"
+2026-09-08,Daily Planet,Creamy Pesto Ravioli,"Cheese ravioli tossed in a pesto cream sauce served with parmesan, lemon dressed arugula, roasted green beans, mushrooms, and tomatoes",8.75,Vegetarian
+2026-09-08,SimplyOASIS,Lemon Chicken over Cauliflower Rice,"Roasted chicken thigh marinated in lemon and garlic over rice with cauliflower, caramelized onion, & fresh herbs, spinach cucumber salad with herb vinaigrette",9.25,"Made without Gluten-Containing Ingredients, In Balance"
+2026-09-08,SimplyOASIS,Black Bean Cakes,"Roasted chickpea and black bean cake, over rice with cauliflower, caramelized onion, & fresh herbs, spinach cucumber salad and herb vinaigrette",8.75,"Vegan, Made without Gluten-Containing Ingredients, In Balance"
+2026-09-08,Grill,Turkey Reuben Burger,"Turkey patty, Swiss cheese, sauerkraut , caramelized onion, and Thousand Island dressing on a Grand Central rustic bun",8.50,
+2026-09-08,Grill,Beyond Burger Reuben,"Beyond patty, Swiss cheese, sauerkraut, caramelized onion, and Thousand Island dressing on a Grand Central rustic bun",8.50,Vegetarian
+2026-09-08,Grill,Grilled Chicken Breast,,,Made without Gluten-Containing Ingredients
+2026-09-08,Grill,Extra Beef Patty,,,Made without Gluten-Containing Ingredients
+2026-09-08,Grill,Gluten Free Pub Bun,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,bacon,,,Made without Gluten-Containing Ingredients
+2026-09-08,Grill,egg,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,vegan coconut Chao cheese,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,cheddar cheese,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,swiss cheese,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,provolone cheese,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,pepper jack cheese,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,sour cream,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,tomato,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,onion,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,Barbecue Sauce,,,
+2026-09-08,Grill,salsa,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,Chicken Strips,,,
+2026-09-08,Grill,Vegan Incognito Nuggets,,,Vegan
+2026-09-08,Grill,French Fries,,,Vegan
+2026-09-08,Grill,Specialty Fries,,,Vegan
+2026-09-08,Grill,"Hamburger with Pub Bun, Lettuce, Tomato, Onion, Pickle",,,
+2026-09-08,Grill,"Grilled Chicken Sandwich with Lettuce, Tomato, Onions, Pickle on a Pub Bun",,,
+2026-09-08,Grill,"Turkey Burger with Pub Bun, Lettuce, Tomato, Onion, Pickle",,,
+2026-09-08,Grill,"Impossible Burger with Pub Bun, Lettuce, Tomato, Onion, Pickle",,,Vegetarian
+2026-09-08,Grill,"Black Bean Burger with Pub Bun, Lettuce, Tomato, Onion, Pickle",,,Vegetarian
+2026-09-08,Grill,"Grilled Cheese on Sourdough with Provolone, Swiss and Cheddar Cheese",,,Vegetarian
+2026-09-08,Grill,lettuce,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Grill,pickle,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Ovens,Pasta,,,Vegan
+2026-09-08,Ovens,Alfredo Sauce,,,Vegetarian
+2026-09-08,Ovens,Marinara Sauce,,,
+2026-09-08,Ovens,Steamed Broccoli,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Ovens,Beans Black,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Ovens,Brown Rice,,,Vegan
+2026-09-08,Melange,Jalapeño Agave Pork,"Roast pork, jalapeño agave glaze",9.25,
+2026-09-08,Melange,Jalapeño Agave Tofu,"Roasted tofu, jalapeño agave glaze",9.25,Vegan
+2026-09-08,Melange,Rice Bowl Options,"Steamed napa cabbage, onions, broccoli, and green cabbage",,
+2026-09-08,Melange,pickled ginger,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,coconut yellow curry sauce,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,teriyaki sauce (m.w.g.c.i.),,,Made without Gluten-Containing Ingredients
+2026-09-08,Melange,beef pho stock,,,Made without Gluten-Containing Ingredients
+2026-09-08,Melange,hoisin sauce,,,Vegetarian
+2026-09-08,Melange,crispy chow mein noodle,,,Vegetarian
+2026-09-08,Melange,bok choy,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,broccoli,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,carrot,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,add napa cabbage,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,brown rice no added salt,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,jasmine rice no added salt,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,yakisoba noodle cooked with oil (no added salt),,,Vegan
+2026-09-08,Melange,rice noodle,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,Grilled Chicken Thigh,,,Made without Gluten-Containing Ingredients
+2026-09-08,Melange,chicken tender breaded fried,,,
+2026-09-08,Melange,beef flank,,,Made without Gluten-Containing Ingredients
+2026-09-08,Melange,Pork Shoulder,,,Made without Gluten-Containing Ingredients
+2026-09-08,Melange,tofu,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,tempeh,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,fried tofu,,,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Melange,cage free egg,,,"Vegetarian, Made without Gluten-Containing Ingredients"
+2026-09-08,Simmered,Yellow Coconut Curry,"Yellow coconut curry broth with tofu, potatoes, carrots, zucchini, squash, onions, and peppers, spinach",3.50,"Vegan, Made without Gluten-Containing Ingredients"
+2026-09-08,Simmered,Creamy Mushroom,"Mushroom, onion, celery, garlic, thyme, beef broth, cream",3.50,Made without Gluten-Containing Ingredients
