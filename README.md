@@ -8,7 +8,7 @@ instructions for recreating everything.
 
 ## Folders
 
-- [`dinner_menu_scraper/`](dinner_menu_scraper/) — What's was
+- [`dinner_menu_scraper/`](dinner_menu_scraper/) — What was
   served at Commons dinner (SimplyOASIS and Classics stations) in the Spring
   2026 semester, broken down by main ingredient and meat vs. veggie.
 
