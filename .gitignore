@@ -50,3 +50,6 @@ rsconnect/
 
 # macOS
 .DS_Store
+
+# fat_bear_week is its own git repo (github.com/josiegriffin/fat-bear-week)
+/fat_bear_week/
