@@ -3,7 +3,7 @@ library(tidyverse)
 library(ggpattern)
 
 # load data
-raw_menu <- read_csv("data/dinner_jan26_may14.csv")
+raw_menu <- read_csv("data/dinner_jan26_may14.csv") 
 
 # most popular single meal
 most_popular <- raw_menu |> 
