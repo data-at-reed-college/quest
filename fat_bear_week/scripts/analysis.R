@@ -126,6 +126,7 @@ contest_chart <- ggplot(contest_data, aes(y = label)) +
     legend.key.size = unit(0.8, "lines"),
     legend.spacing.x = unit(12, "pt"),
     panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(color = "grey80"),
     panel.grid.major.y = element_blank()
   )
 
@@ -176,6 +177,7 @@ overlay_chart <- ggplot(overlay_data, aes(x = year)) +
   year_scale +
   scale_y_continuous(
     name = "Total revenue",
+    expand = expansion(mult = c(0.05, 0.15)),
     labels = scales::label_dollar(scale = 1e-6, suffix = "M"),
     sec.axis = sec_axis(~ . / scale_factor, name = "Total votes", labels = scales::label_comma())
   ) +
@@ -187,15 +189,16 @@ overlay_chart <- ggplot(overlay_data, aes(x = year)) +
     axis.text.x = element_text(color = "black", size = 10),
     axis.text.y = element_text(color = "black", size = 12),
     # Balance left/right axis title margins
-    axis.title.y = element_text(size = 13, margin = margin(r = 4)),
-    axis.title.y.right = element_text(size = 13, margin = margin(l = 24)),
+    axis.title.y = element_text(size = 13, face = "bold", margin = margin(r = 4)),
+    axis.title.y.right = element_text(size = 13, face = "bold", margin = margin(l = 24)),
     legend.position = "bottom",
-    panel.grid.minor = element_blank()
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_line(color = "grey80")
   )
 overlay_chart
 
 # --- Combined stacked figure -----------------------------------------
-# Drop top chart's x-axis (shown below instead)
+# Drop top chart's x-axis (shown at the bottom of the figure instead)
 contest_chart_top <- contest_chart +
   theme(
     axis.text.x = element_blank(),
@@ -203,20 +206,28 @@ contest_chart_top <- contest_chart +
     plot.margin = margin(b = 2)
   )
 
-# Shared year axis between the two panels
+# Shared year axis at the bottom of the figure; thin black line separates the panels
 overlay_chart_bottom <- overlay_chart +
+  geom_hline(yintercept = Inf, color = "black", linewidth = 0.4) +
+  # Left title drawn as text so it hugs the tick labels (the top chart's wide
+  # labels otherwise push the real axis title to the figure edge)
+  annotate(
+    "text", x = min(contest_years) - 2.4, y = max(overlay_data$total_revenue, na.rm = TRUE) / 2,
+    label = "Total revenue", angle = 90, size = 13 / .pt, fontface = "bold"
+  ) +
+  coord_cartesian(clip = "off") +
   scale_x_continuous(
     breaks = contest_years, labels = abbreviate_years, limits = range(contest_years),
-    position = "top"
+    oob = scales::oob_keep
   ) +
   theme(
-    axis.text.x.top = element_text(color = "black", size = 12, face = "bold"),
-    axis.ticks.x.top = element_blank(),
+    axis.title.y.left = element_blank(),
+    axis.text.x = element_text(color = "black", size = 12, face = "bold"),
     plot.margin = margin(t = 2)
   )
 
 contest_and_overlay <- contest_chart_top / overlay_chart_bottom +
-  plot_layout(heights = c(3, 1.5), axis_titles = "collect") +
+  plot_layout(heights = c(3, 1.5)) +
   plot_annotation(
     title = title_text,
     subtitle = subtitle_text,
