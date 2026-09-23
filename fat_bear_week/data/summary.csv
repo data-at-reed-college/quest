@@ -1,0 +1,13 @@
+year,entries,est_votes,total_votes,precision,source,champion,runner_up,total_revenue
+2014,"410, 480 Otis","1,700",1700,"Stated, likely rounded",Katmai Conservancy (via Popular Science),480 Otis,410,NA
+2015,"409 Beadnose, 480 Otis",Not found,NA,NA,NA,409 Beadnose,480 Otis,NA
+2016,"435 Holly, 480 Otis",Not found,NA,NA,NA,480 Otis,435 Holly,NA
+2017,"480 Otis, 747",Not found,NA,NA,NA,480 Otis,747,203307
+2018,"409 Beadnose, 480 Otis, 747","Under ~62,000 (implied)",62000,Inferred,Derived from 2019 coverage,409 Beadnose,747,215785
+2019,"435 Holly, 775 Lefty","187,000",187000,Rounded,EcoWatch,435 Holly,775 Lefty,23982
+2020,"151 Walker, 32 Chunk, 747","More than 640,000",640000,Lower bound,Explore.org Hall of Champions,747,32 Chunk,549706
+2021,"128 Grazer, 131, 132-cub-2021 132's spring cub, 151 Walker, 32 Chunk, 402, 435 Holly, 480 Otis, 503, 634 Popeye, 747, 812","793,463",793463,Exact,NPS recap blog,480 Otis,151 Walker,788985
+2022,"128 Grazer, 151 Walker, 164 Bucky, 32 Chunk, 335, 435 Holly, 480 Otis, 609, 747, 854 Divot, 856, 901",More than 1 million,1000000,Lower bound,Explore.org,747,901,650561
+2023,"128 Grazer, 151 Walker, 164 Bucky, 284 Electra, 32 Chunk, 402, 428 Studious, 435 Holly, 480 Otis, 747, 806-jr-2023 806's spring cub, 901",~1.3M or ~1.4M,1350000,"Rounded, sources conflict",Explore.org vs. NPS,128 Grazer,32 Chunk,1628460
+2024,"128 Grazer, 151 Walker, 164 Bucky, 32 Chunk, 504, 519, 609, 747, 856, 901, 903 Gully, 909",~1.2M,1200000,Rounded,Explore.org,128 Grazer,32 Chunk,1325542
+2025,"128 Grazer, 128-jr 128 Jr., 26, 32 Chunk, 503, 602, 609, 856, 901, 909, 910, 99","1.5M, 1.6M, or 1.7M",1600000,"Rounded, sources conflict",Explore.org/NPS vs. Smithsonian vs. Wikipedia,32 Chunk,856,NA
