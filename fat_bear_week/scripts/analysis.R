@@ -212,7 +212,7 @@ overlay_chart_bottom <- overlay_chart +
   # Left title drawn as text so it hugs the tick labels (the top chart's wide
   # labels otherwise push the real axis title to the figure edge)
   annotate(
-    "text", x = min(contest_years) - 2.4, y = max(overlay_data$total_revenue, na.rm = TRUE) / 2,
+    "text", x = min(contest_years) - 2.8, y = max(overlay_data$total_revenue, na.rm = TRUE) / 2,
     label = "Total revenue", angle = 90, size = 13 / .pt, fontface = "bold"
   ) +
   coord_cartesian(clip = "off") +
