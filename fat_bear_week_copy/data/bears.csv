@@ -1,0 +1,41 @@
+bear_id,name,sex,birth_year_est,birth_year_basis,first_year_identified,mother_id,mother_basis,aliases,sources,notes
+26,,F,,,,435,believed (USA Today 2025),,usat_2025,Arrived 2025 with a new litter
+32,Chunk,M,2005,identified as independent 2.5-yr-old in 2007,2007,,,,nps_2021;nps_2024,Broken jaw 2025
+89,Backpack,M,2006,was 435's yearling in 2007,,435,NPS bio of 435,,nps_2021,
+99,,U,2015,'approximately 10 years old' in 2025,,,,,usat_2025,Sex not stated in source
+128,Grazer,F,2004,"CONFLICT: 'young cub in 2005' (2024 bio) vs 'first identified 2009, ~17-19 yrs' (2022 bio)",2005,,,,nps_2021;nps_2022;nps_2024,2023 & 2024 champion
+128-jr,128 Jr.,F,2024,yearling in 2025,2024,128,stated,128's yearling,usat_2025;nps_past,2025 Fat Bear Junior champion
+131,,F,2018,stated born 2018,2020,,,,nps_2021,
+132,,F,,,,,,,nps_2021;usat_2026,Used Brooks River every year since 2009
+132-cub-2021,132's spring cub,U,2021,spring cub in 2021,2021,132,stated,,nps_2021,2021 Fat Bear Junior champion; sex not stated
+151,Walker,M,2007,independent 2-yr-old in 2009,2009,,,,nps_2021;nps_2022;nps_2024,
+164,Bucky,M,2016,subadult in 2019; ~6 yrs in 2022,2019,,,Bucky Dent,nps_2022;nps_2024,
+284,Electra,F,,,,,,,news_12_2023;usat_2026,
+335,,F,2020,2.5-yr-old in 2022,2020,435,stated,,nps_2022,
+402,,F,,,,,,,nps_2021;news_12_2023;wiki,Killed by bear 469 during 2024 FBW; 7-8+ litters
+409,Beadnose,F,,,,,,,explore_hoc,2015 & 2018 champion
+410,,F,,,,,,,explore_hoc,"'Elder female', 2014 runner-up"
+428,Studious,F,2020,3.5-yr-old in 2023,,128,stated,,news_12_2023;usat_2026,
+435,Holly,F,1997,young adult/older subadult in 2001; 'mid to late 20s' in 2022,2001,,,,nps_2021;nps_2022,2019 champion
+480,Otis,M,1996,4-6 yrs old when identified in 2001,2001,,,,nps_2021;nps_2022;wiki_otis,Not seen 2024-25; presumed dead
+503,,M,2013,left mother at start of 2nd summer (2014),,402,stated; adopted by 435 in 2014,,nps_2021;usat_2025,
+504,,F,,,,,,,nps_2024,Competed 2024 with her large cubs
+519,,F,2021,'nearly three' in 2024,,719,stated,,nps_2024,
+602,,M,,,,,,,usat_2025,
+609,,F,2021,~5 yrs in 2025; LIKELY same bear as 909 Jr.,2021,909,INFERRED: both described as 2022 Fat Bear Junior champion,909 Jr.; 909's yearling,usat_2025;nps_2022;nps_2024,VERIFY identity with 909 Jr.; adopted by 910 in 2023
+610,,F,,,,,,,usat_2026,
+620,,F,,subadult in 2026,,,,,usat_2026,
+634,Popeye,M,1999,older subadult in 2002; early 20s in 2021,2002,,,,nps_2021,
+694,,M,,subadult in 2026,,,,,usat_2026,
+719,,F,2014,435's spring cub in 2014,2014,435,stated,,nps_2021;nps_2024,Non-competitor; mother of 519
+747,,M,2001,'a few years old' subadult in 2004,2004,,,,nps_2021;nps_2022;nps_2024,2020 & 2022 champion
+775,Lefty,U,,,,,,,explore_hoc,2019 runner-up; sex not in sources used
+806,,F,,,,,,,news_12_2023;usat_2026,2026: spring cub + adopted 2.5-yr-old ('Biggie')
+806-jr-2023,806's spring cub,M,2023,spring cub in 2023,2023,806,stated,,news_12_2023;nps_past,2023 Fat Bear Junior champion
+812,,M,2015,independent 2-yr-old in 2017,2017,402,believed (NPS bio),,nps_2021,
+854,Divot,F,2002,2.5-yr-old in 2004,2004,,,,nps_2022,
+856,,M,2002,young adult 2006; ~20 in 2022; ~23 in 2025,2006,,,,nps_2022;nps_2024;usat_2025,
+901,,F,2016,2.5-yr-old in 2018,2018,,,,nps_2022;nps_2024;usat_2025,
+903,Gully,M,2016,suspected from 128's 2016 litter,,128,suspected (NPS 2024); stated in 2026 coverage,,nps_2024;usat_2026,
+909,,F,,,,409,stated,,nps_2024;usat_2025;usat_2026,
+910,,F,,,,409,stated,,nps_2024;usat_2025;usat_2026,
