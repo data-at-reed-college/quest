@@ -1,0 +1,21 @@
+geography,school_year,year,mmr_coverage,n_surveyed,survey_type
+Oregon,2016-17,2016,93.8,45705,Census
+Oregon,2017-18,2017,93.2,45818,Census
+Oregon,2018-19,2018,93,45870,Census
+Oregon,2019-20,2019,93.4,45959,Census
+Oregon,2020-21,2020,92.7,39568,Census
+Oregon,2021-22,2021,93,41538,Census
+Oregon,2022-23,2022,91.9,40963,Census
+Oregon,2023-24,2023,91.2,39568,Census
+Oregon,2024-25,2024,90.5,38247,Census
+Oregon,2025-26,2025,89.6,37309,Census
+United States,2016-17,2016,95,NA,NaN
+United States,2017-18,2017,95,NA,NaN
+United States,2018-19,2018,94.7,NA,NaN
+United States,2019-20,2019,95.2,NA,NaN
+United States,2020-21,2020,93.9,3510744,NA
+United States,2021-22,2021,93,3835130,NA
+United States,2022-23,2022,93.1,3832381,NA
+United States,2023-24,2023,92.7,3823506,NA
+United States,2024-25,2024,92.5,3785644,NA
+United States,2025-26,2025,92.4,3692432,NA
