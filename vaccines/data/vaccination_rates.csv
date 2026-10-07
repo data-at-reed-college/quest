@@ -1,0 +1,81 @@
+geography,measure,season,year,coverage,ci_95,n_surveyed,pp_change_yoy,pp_change_since_start
+Oregon,"Flu, adults (18+)",2015-16,2015,38.7,36.2 to 41.2,3316,NA,0
+Oregon,"Flu, adults (18+)",2016-17,2016,36.9,34.7 to 39.1,4365,-1.8,-1.8
+Oregon,"Flu, adults (18+)",2017-18,2017,37,34.8 to 39.2,3524,0.1,-1.7
+Oregon,"Flu, adults (18+)",2018-19,2018,45.1,42.7 to 47.5,4622,8.1,6.4
+Oregon,"Flu, adults (18+)",2019-20,2019,48.2,46.4 to 50.0,5554,3.1,9.5
+Oregon,"Flu, adults (18+)",2020-21,2020,50.5,48.1 to 52.9,3720,2.3,11.8
+Oregon,"Flu, adults (18+)",2021-22,2021,48.5,46.5 to 50.5,4476,-2,9.8
+Oregon,"Flu, adults (18+)",2022-23,2022,48.9,46.5 to 51.3,3982,0.4,10.2
+Oregon,"Flu, adults (18+)",2023-24,2023,45.9,43.7 to 48.1,5795,-3,7.2
+Oregon,"Flu, adults (18+)",2024-25,2024,44.8,42.3 to 47.3,2578,-1.1,6.1
+United States,"Flu, adults (18+)",2015-16,2015,41.7,41.3 to 42.1,319167,NA,0
+United States,"Flu, adults (18+)",2016-17,2016,43.3,42.7 to 43.9,325801,1.6,1.6
+United States,"Flu, adults (18+)",2017-18,2017,37.1,36.7 to 37.5,313143,-6.2,-4.6
+United States,"Flu, adults (18+)",2018-19,2018,45.3,44.9 to 45.7,302148,8.2,3.6
+United States,"Flu, adults (18+)",2019-20,2019,48.4,47.8 to 49.0,286116,3.1,6.7
+United States,"Flu, adults (18+)",2020-21,2020,50.2,49.6 to 50.8,291711,1.8,8.5
+United States,"Flu, adults (18+)",2021-22,2021,49.4,49.0 to 49.8,291839,-0.8,7.7
+United States,"Flu, adults (18+)",2022-23,2022,46.9,46.5 to 47.3,297255,-2.5,5.2
+United States,"Flu, adults (18+)",2023-24,2023,44.9,44.3 to 45.5,306822,-2,3.2
+United States,"Flu, adults (18+)",2024-25,2024,41.9,41.3 to 42.5,268799,-3,0.2
+Oregon,"Flu, all ages (6 months+)",2015-16,2015,42,39.8 to 44.2,5231,NA,0
+Oregon,"Flu, all ages (6 months+)",2016-17,2016,40,38.1 to 41.9,6492,-2,-2
+Oregon,"Flu, all ages (6 months+)",2017-18,2017,40.6,38.7 to 42.5,5197,0.6,-1.4
+Oregon,"Flu, all ages (6 months+)",2018-19,2018,48.2,46.1 to 50.3,6325,7.6,6.2
+Oregon,"Flu, all ages (6 months+)",2019-20,2019,51.4,49.9 to 52.9,7770,3.2,9.4
+Oregon,"Flu, all ages (6 months+)",2020-21,2020,51.4,49.4 to 53.4,6201,0,9.4
+Oregon,"Flu, all ages (6 months+)",2021-22,2021,49.8,48.1 to 51.5,6741,-1.6,7.8
+Oregon,"Flu, all ages (6 months+)",2022-23,2022,49.8,47.8 to 51.8,5730,0,7.8
+Oregon,"Flu, all ages (6 months+)",2023-24,2023,47.7,45.8 to 49.6,7998,-2.1,5.7
+Oregon,"Flu, all ages (6 months+)",2024-25,2024,45,42.9 to 47.1,4710,-2.7,3
+United States,"Flu, all ages (6 months+)",2015-16,2015,45.6,45.2 to 46.0,446013,NA,0
+United States,"Flu, all ages (6 months+)",2016-17,2016,46.8,46.3 to 47.3,468970,1.2,1.2
+United States,"Flu, all ages (6 months+)",2017-18,2017,41.7,41.4 to 42.0,436204,-5.1,-3.9
+United States,"Flu, all ages (6 months+)",2018-19,2018,49.2,48.9 to 49.5,441506,7.5,3.6
+United States,"Flu, all ages (6 months+)",2019-20,2019,51.8,51.3 to 52.3,439649,2.6,6.2
+United States,"Flu, all ages (6 months+)",2020-21,2020,52.1,51.6 to 52.6,437494,0.3,6.5
+United States,"Flu, all ages (6 months+)",2021-22,2021,51.4,51.1 to 51.7,449985,-0.7,5.8
+United States,"Flu, all ages (6 months+)",2022-23,2022,49.3,49.0 to 49.6,428510,-2.1,3.7
+United States,"Flu, all ages (6 months+)",2023-24,2023,47.2,46.7 to 47.7,444572,-2.1,1.6
+United States,"Flu, all ages (6 months+)",2024-25,2024,43.8,43.3 to 44.3,387362,-3.4,-1.8
+Oregon,"Flu, children (6 months-17 years)",2015-16,2015,54.6,50.7 to 58.5,1915,NA,0
+Oregon,"Flu, children (6 months-17 years)",2016-17,2016,52,48.1 to 55.9,2127,-2.6,-2.6
+Oregon,"Flu, children (6 months-17 years)",2017-18,2017,54.3,50.2 to 58.4,1673,2.3,-0.3
+Oregon,"Flu, children (6 months-17 years)",2018-19,2018,60.4,56.2 to 64.6,1703,6.1,5.8
+Oregon,"Flu, children (6 months-17 years)",2019-20,2019,64.1,60.9 to 67.3,2216,3.7,9.5
+Oregon,"Flu, children (6 months-17 years)",2020-21,2020,55.2,51.9 to 58.5,2481,-8.9,0.6
+Oregon,"Flu, children (6 months-17 years)",2021-22,2021,54.8,51.5 to 58.1,2265,-0.4,0.2
+Oregon,"Flu, children (6 months-17 years)",2022-23,2022,53.3,49.4 to 57.2,1748,-1.5,-1.3
+Oregon,"Flu, children (6 months-17 years)",2023-24,2023,55,51.1 to 58.9,2203,1.7,0.4
+Oregon,"Flu, children (6 months-17 years)",2024-25,2024,46.1,43.0 to 49.2,2132,-8.9,-8.5
+United States,"Flu, children (6 months-17 years)",2015-16,2015,59.3,58.5 to 60.1,126846,NA,0
+United States,"Flu, children (6 months-17 years)",2016-17,2016,59,58.3 to 59.7,143169,-0.3,-0.3
+United States,"Flu, children (6 months-17 years)",2017-18,2017,57.8,57.1 to 58.5,123061,-1.2,-1.5
+United States,"Flu, children (6 months-17 years)",2018-19,2018,62.5,61.8 to 63.2,139358,4.7,3.2
+United States,"Flu, children (6 months-17 years)",2019-20,2019,63.7,63.1 to 64.3,153533,1.2,4.4
+United States,"Flu, children (6 months-17 years)",2020-21,2020,58.6,58.0 to 59.2,145783,-5.1,-0.7
+United States,"Flu, children (6 months-17 years)",2021-22,2021,57.8,57.3 to 58.3,158146,-0.8,-1.5
+United States,"Flu, children (6 months-17 years)",2022-23,2022,57.4,56.8 to 58.0,131255,-0.4,-1.9
+United States,"Flu, children (6 months-17 years)",2023-24,2023,55.4,54.8 to 56.0,137750,-2,-3.9
+United States,"Flu, children (6 months-17 years)",2024-25,2024,50.2,49.6 to 50.8,118563,-5.2,-9.1
+Oregon,"MMR, kindergarten (2 doses)",2016-17,2016,93.8,NA,45705,NA,0
+Oregon,"MMR, kindergarten (2 doses)",2017-18,2017,93.2,NA,45818,-0.6,-0.6
+Oregon,"MMR, kindergarten (2 doses)",2018-19,2018,93,NA,45870,-0.2,-0.8
+Oregon,"MMR, kindergarten (2 doses)",2019-20,2019,93.4,NA,45959,0.4,-0.4
+Oregon,"MMR, kindergarten (2 doses)",2020-21,2020,92.7,NA,39568,-0.7,-1.1
+Oregon,"MMR, kindergarten (2 doses)",2021-22,2021,93,NA,41538,0.3,-0.8
+Oregon,"MMR, kindergarten (2 doses)",2022-23,2022,91.9,NA,40963,-1.1,-1.9
+Oregon,"MMR, kindergarten (2 doses)",2023-24,2023,91.2,NA,39568,-0.7,-2.6
+Oregon,"MMR, kindergarten (2 doses)",2024-25,2024,90.5,NA,38247,-0.7,-3.3
+Oregon,"MMR, kindergarten (2 doses)",2025-26,2025,89.6,NA,37309,-0.9,-4.2
+United States,"MMR, kindergarten (2 doses)",2016-17,2016,95,NA,NA,NA,0
+United States,"MMR, kindergarten (2 doses)",2017-18,2017,95,NA,NA,0,0
+United States,"MMR, kindergarten (2 doses)",2018-19,2018,94.7,NA,NA,-0.3,-0.3
+United States,"MMR, kindergarten (2 doses)",2019-20,2019,95.2,NA,NA,0.5,0.2
+United States,"MMR, kindergarten (2 doses)",2020-21,2020,93.9,NA,3510744,-1.3,-1.1
+United States,"MMR, kindergarten (2 doses)",2021-22,2021,93,NA,3835130,-0.9,-2
+United States,"MMR, kindergarten (2 doses)",2022-23,2022,93.1,NA,3832381,0.1,-1.9
+United States,"MMR, kindergarten (2 doses)",2023-24,2023,92.7,NA,3823506,-0.4,-2.3
+United States,"MMR, kindergarten (2 doses)",2024-25,2024,92.5,NA,3785644,-0.2,-2.5
+United States,"MMR, kindergarten (2 doses)",2025-26,2025,92.4,NA,3692432,-0.1,-2.6
