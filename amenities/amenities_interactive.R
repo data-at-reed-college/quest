@@ -151,7 +151,10 @@ table <- datatable(
   shared,
   colnames = c("Name" = "name", "Type" = "type", "Location (lat, lon)" = "location", "Distance from Reed (mi)" = "dist_miles"),
   rownames = FALSE,
-  options = list(columnDefs = list(list(targets = c(4, 5), visible = FALSE)))
+  options = list(
+    columnDefs = list(list(targets = c(4, 5), visible = FALSE)),
+    order = list(list(3, "asc"))
+  )
 )
 
 # --- Legend -------------------------------------------------------------
@@ -186,7 +189,7 @@ legend_box <- tags$div(
 # calling it once per row.
 
 widget <- tagList(
-  bscols(widths = 12, filter_select("type", "Amenity type", shared, ~type, multiple = TRUE)),
+  bscols(widths = 12, filter_select("type", "Click in box to display specific amenities", shared, ~type, multiple = TRUE)),
   bscols(widths = 12, legend_box),
   bscols(widths = 12, map),
   bscols(widths = 12, table)
@@ -204,7 +207,7 @@ Sys.setenv(RSTUDIO_PANDOC = path.expand("~/.local/bin"))
 rmd_path <- tempfile(fileext = ".Rmd")
 writeLines(c(
   "---",
-  "title: Amenities near Reed",
+  "title: Interesting 'Amenities' Near Reed",
   "output:",
   "  html_document:",
   "    self_contained: true",
