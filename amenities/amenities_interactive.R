@@ -1,6 +1,4 @@
 # Interactive amenities map for the Reed neighborhood (Portland, OR)
-# Run from the Quest/ repo root (paths below are relative to it).
-# Produces a single self-contained HTML file meant to be embedded via <iframe>.
 
 library(tidyverse)
 library(sf)
@@ -12,66 +10,53 @@ library(htmlwidgets)
 library(htmltools)
 library(RColorBrewer)
 
-# Some OSM polygon data has invalid/unclosed rings. sf's s2 (spherical)
-# backend is strict about this and errors on st_crop(); GEOS (planar) just
-# handles it.
+# Some OSM's polygon data is invalid. sf's s2 is too strict, so turn it off
 sf_use_s2(FALSE)
 
-# --- Study area ----------------------------------------------------------
-# Bounding box covering inner Portland out to I-205 (order: xmin, ymin,
-# xmax, ymax in lon/lat).
-
+# --- create map area ----------------------------------------------------------
+# Bounding box vaguely around inner Portland to I-205 on the east
 bb <- c(-122.72, 45.46, -122.55, 45.56)
 
+# a shapefile that contains the outline of Reed
 reed <- st_read("amenities/data/reed_boundary/reed_boundary_WGS.shp", quiet = TRUE) |>
   st_transform(4326)
 
 # --- Pull amenities from OpenStreetMap -----------------------------------
-# Reads from a local OSM extract (bbbike's "Portland" metro-area file,
-# downloaded once via osmextract::oe_download() into
-# ~/Documents/GIS_files/osm_extracts/) rather than the live Overpass API,
-# which is unreliable. Cached locally after the first build; delete the
-# cache file (not the extract) to rebuild after changing
-# `included_amenities` or `bb`.
-#
-# The amenity subset below (picked from the OSM wiki's amenity groups)
-# keeps the map focused on things worth checking off, instead of every
-# bench and waste basket.
+# OSM is supposed to be accessible with Overpass API, but that kept giving 502/504 errors
+# So instead, this reads from my local OSM extract (big download) and creates a cached rds
 
+# my local file
+extract_file <- "/Users/griffinj/Documents/GIS_files/osm_extracts/bbbike_Portland.osm.pbf"
+# the cache it creates
+cache_file <- "amenities/data/amenities_raw_inner_pdx.rds"
+# the area to pull from (because raw is larger than my desired plot area)
+study_area <- st_bbox(c(xmin = bb[1], ymin = bb[2], xmax = bb[3], ymax = bb[4]), crs = st_crs(4326))
+
+# choose the amenities; there are more  but this is a curated list that I found fun/interesting
+# if you want to see all types, remove this from the filtering and 
+# then run unique(amenities$amenity)
 included_amenities <- c(
-  # Sustenance
   "bar", "biergarten", "cafe", "fast_food", "food_court", "ice_cream", "pub", "restaurant",
-  # Entertainment, Arts & Culture
-  "arts_centre", "brothel", "casino", "cinema", "community_centre", "conference_centre",
+  "arts_centre", "casino", "cinema", "community_centre", "conference_centre",
   "events_venue", "exhibition_centre", "fountain", "gambling", "love_hotel", "music_venue",
   "nightclub", "planetarium", "public_bookcase", "social_centre", "stage", "stripclub",
-  "studio", "swingerclub", "theatre",
-  # Healthcare (subset)
-  "veterinary", "dentist", "baby_hatch",
-  # Education (subset)
-  "library",
-  # Transportation (subset)
-  "bicycle_parking", "bicycle_repair_station", "bicycle_rental",
-  # Public Service
-  "courthouse", "fire_station", "police", "post_box", "post_depot", "post_office",
-  "prison", "ranger_station", "townhall",
-  # Facilities (subset)
-  "bbq", "dog_toilet", "drinking_water", "toilets",
-  # Waste Management (subset)
-  "recycling",
-  # Other
-  "animal_shelter", "clock", "crematorium", "grave_yard", "public_bath", "refugee_site", "hydrant"
+  "studio", "swingerclub", "theatre", "veterinary", "dentist", "baby_hatch", "library",
+  "bicycle_parking", "bicycle_repair_station", "bicycle_rental", "courthouse", "fire_station", 
+  "police", "post_box", "post_depot", "post_office", "prison", "ranger_station", "townhall",
+  "bbq", "dog_toilet", "drinking_water", "toilets", "recycling", "animal_shelter", "clock", 
+  "crematorium", "grave_yard", "public_bath", "refugee_site", "hydrant"
 )
 
-extract_file <- "/Users/griffinj/Documents/GIS_files/osm_extracts/bbbike_Portland.osm.pbf"
-cache_file <- "amenities/data/amenities_raw_inner_pdx.rds"
-study_area <- st_bbox(c(xmin = bb[1], ymin = bb[2], xmax = bb[3], ymax = bb[4]), crs = st_crs(4326))
+# if the cache hasn't been created this will run and pull the things I want
+# I wanted to add dispensaries which for some reason was in "shops" instead of amenities
+# so that's a separate pull
 
 if (file.exists(cache_file)) {
   amenities <- readRDS(cache_file)
 } else {
+
   # Amenities are points, but some are tagged on building footprints, so
-  # polygons (the "multipolygons" layer) are reduced to centroids.
+  # polygons are reduced to centroids
   read_layer <- function(layer) {
     oe_read(extract_file, layer = layer, extra_tags = c("amenity", "shop"), quiet = TRUE) |>
       st_transform(4326) |>
@@ -84,33 +69,38 @@ if (file.exists(cache_file)) {
   ) |>
     st_crop(study_area)
 
-  # Dispensaries are tagged as shops, not amenities.
+  # get dispensaries by searching for "cannabis" shops
   dispensaries <- pts |>
     filter(shop == "cannabis") |>
     transmute(name, amenity = "dispensary")
 
+  # filter for just the amenities I picked
   amenities <- pts |>
     filter(amenity %in% included_amenities) |>
     transmute(name, amenity)
 
+  #combine
   amenities <- bind_rows(amenities, dispensaries)
 
+  # create cache
   dir.create(dirname(cache_file), showWarnings = FALSE, recursive = TRUE)
   saveRDS(amenities, cache_file)
 }
 
-amenities <- amenities |>
-  mutate(dist_miles = as.numeric(st_distance(geometry, st_union(reed))) / 1609.344)
-
-# Unnamed places aren't useful on an interactive map (nothing to hover/show
-# in the table).
+# remove anything that doesn't have a name
 named_amenities <- amenities |>
   filter(!is.na(name))
 
-# --- Build the data behind the widget --------------------------------------
+# --- Assemble everything that will be displayed in the widget --------------------------------------
 
+# get distance from Reed
+amenities <- amenities |>
+  mutate(dist_miles = as.numeric(st_distance(geometry, st_union(reed))) / 1609.344)
+
+# set coordinates chosen area
 coords <- st_coordinates(named_amenities)
 
+# get df with information that I want to show in the hover dialogue and the table 
 amenities_df <- named_amenities |>
   st_drop_geometry() |>
   mutate(
@@ -122,31 +112,37 @@ amenities_df <- named_amenities |>
   ) |>
   select(name, type, location, dist_miles, lon, lat)
 
+# this is a crosstalk thing so that multiple widgets (map and table) share data
 shared <- SharedData$new(amenities_df)
 
-# --- Map ---------------------------------------------------------------
+# --- Make the Map ---------------------------------------------------------------
 
+# color the amenities by type
 n_types <- n_distinct(amenities_df$type)
 pal <- colorFactor(colorRampPalette(RColorBrewer::brewer.pal(12, "Paired"))(n_types), domain = amenities_df$type)
 
-# Open centered on Reed rather than on the bbox's own (off-center) midpoint.
+# have the intial map be centered around Reed
 reed_center <- unname(st_coordinates(st_centroid(st_union(reed)))[1, ])
 
+# make the map with leaflet so it's interactive
 map <- leaflet(shared, width = "100%") |>
+  # provider tiles is what the background of the map is
   addProviderTiles("Esri.WorldGrayCanvas") |>
+  # make the Reed boundary distinct
   addPolygons(data = reed, fillColor = "grey50", fillOpacity = 0.35, color = NA) |>
+  # add the points
   addCircleMarkers(
     lng = ~lon, lat = ~lat,
     radius = 6, stroke = TRUE, color = "white", weight = 1,
     fillColor = ~pal(type), fillOpacity = 0.9,
     label = ~lapply(paste0(htmlEscape(name), "<br/>", htmlEscape(type)), HTML)
   ) |>
+  # center initial map
   setView(lng = reed_center[1], lat = reed_center[2], zoom = 14)
 
-# --- Table ---------------------------------------------------------------
-# lon/lat stay in the shared data (leaflet needs them) but are hidden here;
-# columnDefs targets are 0-based column indexes (rownames are off).
-
+# --- Create Data Table Below map ---------------------------------------------------------------
+# show the name of the thing, the type, distance from Reed, and location 
+# (just lat and long, address is likely possible, but I got lazy)
 table <- datatable(
   shared,
   colnames = c("Name" = "name", "Type" = "type", "Location (lat, lon)" = "location", "Distance from Reed (mi)" = "dist_miles"),
@@ -158,9 +154,8 @@ table <- datatable(
 )
 
 # --- Legend -------------------------------------------------------------
-# A plain, non-interactive color key (square swatches, like leaflet's own
-# addLegend()), laid out in columns. Filtering is the separate type picker
-# below.
+# uses leaflets legend type, but I wanted to move it from the side 
+# to be in columns above the map and that took a little finagling 
 
 type_levels <- sort(unique(amenities_df$type))
 type_colors <- setNames(pal(type_levels), type_levels)
@@ -184,9 +179,9 @@ legend_box <- tags$div(
 )
 
 # --- Layout and save -------------------------------------------------------
-# Each piece is its own full-width (12-column) row; bscols() lays out the
-# contents passed in a *single* call side by side, so stacking rows means
-# calling it once per row.
+# crosstalk package enables bootstrap styling 
+# needed widget to embed into wordpress as an iframe 
+
 
 # Reports this page's real height to whatever window embeds it (e.g. a
 # WordPress iframe), so the embed can resize itself instead of guessing a
@@ -215,19 +210,16 @@ widget <- tagList(
   resize_reporter
 )
 
-# saveWidget() only handles a single htmlwidget, and this layout is a
-# tagList of several, so render through a throwaway .Rmd instead -
-# rmarkdown's self_contained handling understands htmlwidget/crosstalk
-# dependencies correctly. It shells out to pandoc; the R-managed pandoc
-# install lives under a path with a space in it ("Application Support"),
-# which breaks that call, so point it at a space-free symlink instead
-# (~/.local/bin/pandoc).
+# this is technically a couple widgets because of the tagList, so can't just use
+# saveWidget(), so render through a throwaway .Rmd instead -
+# rmarkdown shells out to pandoc, so it needs to be installed
 Sys.setenv(RSTUDIO_PANDOC = path.expand("~/.local/bin"))
 
+# this just compiles everything as html with a title and whatnot
 rmd_path <- tempfile(fileext = ".Rmd")
 writeLines(c(
   "---",
-  "title: Interesting 'Amenities' Near Reed",
+  "title: Ice Cream & Grave Yards - 'Amenities' Near Reed",
   "output:",
   "  html_document:",
   "    self_contained: true",
@@ -238,6 +230,7 @@ writeLines(c(
   "```"
 ), rmd_path)
 
+# save it to a file
 rmarkdown::render(
   rmd_path,
   output_file = "amenities_interactive.html",
