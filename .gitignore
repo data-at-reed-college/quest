@@ -50,3 +50,7 @@ rsconnect/
 
 # macOS
 .DS_Store
+
+# PowerPoint files and their lock files
+*.pptx
+~$*.pptx
