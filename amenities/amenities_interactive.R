@@ -219,7 +219,7 @@ Sys.setenv(RSTUDIO_PANDOC = path.expand("~/.local/bin"))
 rmd_path <- tempfile(fileext = ".Rmd")
 writeLines(c(
   "---",
-  "title: Ice Cream & Grave Yards: 'Amenities' Near Reed",
+  "title: Ice Cream & Grave Yards - 'Amenities' Near Reed",
   "output:",
   "  html_document:",
   "    self_contained: true",
