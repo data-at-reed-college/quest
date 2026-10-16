@@ -188,11 +188,31 @@ legend_box <- tags$div(
 # contents passed in a *single* call side by side, so stacking rows means
 # calling it once per row.
 
+# Reports this page's real height to whatever window embeds it (e.g. a
+# WordPress iframe), so the embed can resize itself instead of guessing a
+# fixed height and getting an internal scrollbar. Fires on load and on any
+# later size change (opening the type picker, changing DT's page length,
+# paginating, etc). The embedding page has to listen for this - see
+# amenities/README.md.
+resize_reporter <- tags$script(HTML("
+  (function() {
+    function sendHeight() {
+      window.parent.postMessage(
+        { type: 'amenities-map-resize', height: document.documentElement.scrollHeight },
+        '*'
+      );
+    }
+    window.addEventListener('load', sendHeight);
+    new ResizeObserver(sendHeight).observe(document.body);
+  })();
+"))
+
 widget <- tagList(
   bscols(widths = 12, filter_select("type", "Click in box to display specific amenities", shared, ~type, multiple = TRUE)),
   bscols(widths = 12, legend_box),
   bscols(widths = 12, map),
-  bscols(widths = 12, table)
+  bscols(widths = 12, table),
+  resize_reporter
 )
 
 # saveWidget() only handles a single htmlwidget, and this layout is a

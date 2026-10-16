@@ -47,3 +47,34 @@ source("amenities/amenities_interactive.R")
 
 - `pandoc`, for the self-contained HTML build. If `rmarkdown` can't find a
   usable pandoc install, see `pandoc::pandoc_install()`.
+
+## Embedding
+
+Published via GitHub Pages at
+`https://data-at-reed-college.github.io/quest/amenities/amenities_interactive.html`.
+
+The page auto-reports its height to its parent window via `postMessage` (an
+iframe can't otherwise know its own content's height, and a fixed guess
+breaks whenever the content changes size — opening the type picker,
+switching the table's page length, paginating, etc.). The embedding page
+needs a small listener alongside the iframe to use it:
+
+```html
+<iframe
+  id="amenities-map-iframe"
+  src="https://data-at-reed-college.github.io/quest/amenities/amenities_interactive.html"
+  width="100%"
+  height="800"
+  style="border:none;"
+  loading="lazy"
+  title="Amenities near Reed — interactive map">
+</iframe>
+<script>
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'amenities-map-resize') {
+      var iframe = document.getElementById('amenities-map-iframe');
+      if (iframe) iframe.style.height = event.data.height + 'px';
+    }
+  });
+</script>
+```
