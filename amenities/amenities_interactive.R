@@ -182,13 +182,9 @@ legend_box <- tags$div(
 # crosstalk package enables bootstrap styling 
 # needed widget to embed into wordpress as an iframe 
 
-
-# Reports this page's real height to whatever window embeds it (e.g. a
-# WordPress iframe), so the embed can resize itself instead of guessing a
-# fixed height and getting an internal scrollbar. Fires on load and on any
-# later size change (opening the type picker, changing DT's page length,
-# paginating, etc). The embedding page has to listen for this - see
-# amenities/README.md.
+# this is supposed to work so the embed can resize itself instead of guessing a
+# fixed height and getting an internal scrollbar; to do this the embedding page 
+# has to "listen" for this - see amenities/README.md.
 resize_reporter <- tags$script(HTML("
   (function() {
     function sendHeight() {

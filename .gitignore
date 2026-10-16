@@ -54,3 +54,9 @@ rsconnect/
 # PowerPoint files and their lock files
 *.pptx
 ~$*.pptx
+
+# Generated image, kept locally only
+amenities/amenities.png
+
+# Session handoff notes
+NOTES.md
