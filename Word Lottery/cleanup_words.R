@@ -22,13 +22,6 @@ lottery <- lottery |>
 
 print(lottery$word[lottery$flag == "Y"])
 
-# join word to Moby Project dictionary to get part of speech
-lottery <- lottery |>
-  mutate(word_lower = str_to_lower(word)) |>
-  left_join(parts_of_speech, by = c("word_lower" = "word"), relationship = "many-to-many") |>
-  mutate(pos = str_squish(str_remove(pos, "\\(.*\\)"))) |>
-  distinct()
-
 # function to pull from Miriam Webster API
 # key is requested and then stored as "MW_KEY"
 get_mw_date <- function(word, key = Sys.getenv("MW_KEY")) {
@@ -54,8 +47,7 @@ word_dates <- lottery |>
       str_detect(first_use, "century"),
       (parse_number(first_use) - 1) * 100 + 50,  # "14th century" -> 1350
       parse_number(first_use)                     # "circa 1450" -> 1450
-    ),
-    specific = if_else(str_detect(first_use, "\\d{4}") %in% TRUE, "Y", "N")
+    )
   )
 
 # graph the word length with tiles
@@ -127,7 +119,7 @@ ggsave("/Users/griffinj/Library/CloudStorage/GoogleDrive-griffinj@reed.edu/My Dr
 googlesheets4::gs4_auth()   # or googlesheets4::gs4_deauth() then re-auth; refreshes the expired login
 googledrive::drive_auth()
 
-ss <- googlesheets4::gs4_create("full_word_list", sheets = list(full_word_list = lottery))
+ss <- googlesheets4::gs4_create("full_word_list_no_score", sheets = list(full_word_list = lottery))
 
 folder <- googledrive::drive_get(
   path = "2026-2027 academic year/Thesis Word Lottery/",
